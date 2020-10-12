@@ -1,6 +1,6 @@
 version: '2.2'
 services:
-  accounts_db:
+  db_accounts:
     image:          postgres:11
     container_name: accounts_db
     restart:        always
@@ -13,7 +13,7 @@ services:
       - '5431:5432'
     volumes:
       - ./postgres/accounts_db:/var/lib/postgresql/data
-  message_db:
+  db_message:
     image:          postgres:11
     container_name: message_db
     restart:        always
@@ -26,7 +26,7 @@ services:
       - '5432:5432'
     volumes:
       - ./postgres/message_db:/var/lib/postgresql/data
-  abuse_db:
+  db_abuse:
     image:          postgres:11
     container_name: abuse_db
     restart:        always
