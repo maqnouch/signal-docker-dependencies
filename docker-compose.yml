@@ -2,7 +2,7 @@ version: '2.2'
 services:
   db_accounts:
     image:          postgres:11
-    container_name: accounts_db
+    container_name: db_accounts
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -15,7 +15,7 @@ services:
       - ./postgres/accounts_db:/var/lib/postgresql/data
   db_message:
     image:          postgres:11
-    container_name: message_db
+    container_name: db_message
     restart:        always
     environment:
       POSTGRES_USER:     postgres
@@ -28,7 +28,7 @@ services:
       - ./postgres/message_db:/var/lib/postgresql/data
   db_abuse:
     image:          postgres:11
-    container_name: abuse_db
+    container_name: db_abuse
     restart:        always
     environment:
       POSTGRES_USER:     postgres
